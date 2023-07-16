@@ -2,30 +2,31 @@ package main
 
 func lengthOfLongestSubstring(s string) int {
 	l := len(s)
+	longest := 0
 
-	switch l {
-	case 0, 1:
-		return l
-	}
-
-	longest := 1
 	for i := range s {
-		for j := i; j <= l; j++ {
-			subStr := s[i:j]
-			if len(subStr) <= 1 {
-				continue
+		length := 0
+		seen := make(map[byte]struct{})
+
+		for j := i; j < l; j++ {
+			char := s[j]
+			if _, found := seen[char]; found {
+				break
 			}
 
-			count := longestNoRepeat(subStr)
-			if count > longest {
-				longest = count
-			}
+			length++
+			seen[char] = struct{}{}
+		}
+
+		if length > longest {
+			longest = length
 		}
 	}
 
 	return longest
 }
 
+// Similar to above, but from start, not for substrings
 func longestNoRepeat(s string) int {
 	l := len(s)
 
