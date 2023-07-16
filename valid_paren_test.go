@@ -1,6 +1,8 @@
 package main
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestIsValid(t *testing.T) {
 	tests := map[string]bool{

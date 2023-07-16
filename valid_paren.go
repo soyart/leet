@@ -1,55 +1,44 @@
 package main
 
 func isValid(s string) bool {
-	var opens, closes []rune
+	var openStack []rune
 
 	for _, char := range s {
 		switch char {
 		case '(', '{', '[':
-			opens = append(opens, char)
+			openStack = append(openStack, char)
 
 		case ')', '}', ']':
-			if len(opens) < 1 {
+			l := len(openStack)
+			if l < 1 {
 				return false
 			}
 
-			closes = append(closes, char)
+			lastOpen := openStack[l-1]
+
+			switch char {
+			case ')':
+				if lastOpen != '(' {
+					return false
+				}
+			case '}':
+				if lastOpen != '{' {
+					return false
+				}
+			case ']':
+				if lastOpen != '[' {
+					return false
+				}
+			}
+
+			if l > 0 {
+				openStack = openStack[:l-1]
+			}
 		}
 	}
 
-	if len(opens) != len(closes) {
+	if len(openStack) != 0 {
 		return false
-	}
-
-	if len(opens) == 0 {
-		return true
-	}
-
-	// ()[]{}
-	// opens:  ( [ {
-	// closes: ) ] }
-
-	// [{(foo)}]
-	// opens: [, {, (
-	// closes: ), }, ]
-
-	for i, j := 0, len(opens)-1; i <= j; i, j = i+1, j-1 {
-		open, close := opens[i], closes[j]
-
-		switch open {
-		case '(':
-			if close != ')' {
-				return false
-			}
-		case '{':
-			if close != '}' {
-				return false
-			}
-		case '[':
-			if close != ']' {
-				return false
-			}
-		}
 	}
 
 	return true
