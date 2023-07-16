@@ -1,0 +1,20 @@
+name: Test Go solutions for ${{ github.event_name }} on ${{ github.ref_name }} by ${{ github.actor }}
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository ${{ github.ref }} ${{ github.sha }}
+        uses: actions/checkout@v3
+      - name: Setup Go on runner
+        uses: actions/setup-go@v4
+        with:
+          # Latest Go stable release
+          go-version: stable
+
+      - name: Run `go test` on all available tests
+        run: go test ./...
