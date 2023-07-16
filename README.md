@@ -9,3 +9,7 @@ My naive and efficient (if possible) solutions to programming problems
 - [[Medium] Length of longest substring without repeating (duplicate) characters](https://leetcode.com/problems/longest-substring-without-repeating-characters)
 
   [Solution](./longest_substr_no_repeat.go)
+
+- [[Easy] Valid Parentheses](https://leetcode.com/problems/valid-parentheses)
+
+  [Solution](./valid_paren.go)
