@@ -1,4 +1,5 @@
-name: Test Go solutions for ${{ github.event_name }} on ${{ github.ref_name }} by ${{ github.actor }}
+name: Test Go solutions
+run-name: Test Go solutions for ${{ github.event_name }} on ${{ github.ref_name }} by ${{ github.actor }}
 
 on:
   push:
