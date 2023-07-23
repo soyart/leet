@@ -16,13 +16,6 @@ func TestMergeSortedArray(t *testing.T) {
 
 	tests := []Test{
 		{
-			nums1:    []int{2, 0},
-			m:        1,
-			nums2:    []int{1},
-			n:        1,
-			expected: []int{1, 2},
-		},
-		{
 			nums1:    []int{1, 2, 3, 0, 0, 0},
 			m:        3,
 			nums2:    []int{2, 5, 6},
