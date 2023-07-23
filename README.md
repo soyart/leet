@@ -25,3 +25,10 @@ My naive and efficient (if possible) solutions to programming problems
   [Solution](./max_profit.go)
 
   [Test](./max_profit_test.go)
+
+- [[Easy] Merge 2 sorted arrays `nums1` and `nums2` (into `nums1`)](https://leetcode.com/problems/merge-sorted-array)
+
+  [Solution](./merge_sorted_arr.go)
+
+  [Test](./merge_sorted_arr_test.go)
+ 
