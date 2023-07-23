@@ -31,4 +31,7 @@ My naive and efficient (if possible) solutions to programming problems
   [Solution](./merge_sorted_arr.go)
 
   [Test](./merge_sorted_arr_test.go)
- 
+
+- [[Easy] Remove elements](https://leetcode.com/problems/remove-element)
+
+  [Solution](./remove_elem.go)
