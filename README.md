@@ -35,3 +35,9 @@ My naive and efficient (if possible) solutions to programming problems
 - [[Easy] Remove elements](https://leetcode.com/problems/remove-element)
 
   [Solution](./remove_elem.go)
+
+- [[Easy] Remove duplicate elements from sorted array](https://leetcode.com/problems/remove-duplicates-from-sorted-array)
+
+  [Solution](./remove_dups.go)
+
+  [Test](./remove_dups_test.go)
